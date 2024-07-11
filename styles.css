@@ -1,43 +1,108 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #030303;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     margin: 0;
 }
 
 .container {
     text-align: center;
-}
+    max-width: 800px;
+    max-height: 800px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    margin: 20px; 
+    overflow: hidden; 
 
 .card {
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative; 
 }
 
 .card img {
     width: 200px;
     height: 300px;
     border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
 }
 
 button {
     border: 2px solid white;
     border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 20px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: #030303;
+    transform: scale(1.1);
 }
 
 #card-name, #card-meaning {
     background-color: rgb(245, 79, 79);
     border-radius: 10px;
-    
-    margin-top: 10px;
-    font-size: 18px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#card-name:hover, #card-meaning:hover {
+    background-color: rgb(255, 99, 99);
+    transform: scale(1.05);
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.card-name-animation {
+    animation: slideInFromLeft 0.5s ease;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.card-meaning-animation {
+    animation: slideInFromRight 0.5s ease;
+}
+
 }
